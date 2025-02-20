@@ -1,0 +1,18 @@
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\bin\Debug\negocio.dll
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\bin\Debug\negocio.pdb
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\bin\Debug\dominio.dll
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\bin\Debug\dominio.pdb
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\obj\Debug\negocio.dll
+C:\Users\Mathi\Desktop\c sharp\Tienda\negocio\obj\Debug\negocio.pdb
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\bin\Debug\negocio.dll
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\bin\Debug\negocio.pdb
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\bin\Debug\dominio.dll
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\bin\Debug\dominio.pdb
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\obj\Debug\negocio.dll
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\negocio\obj\Debug\negocio.pdb

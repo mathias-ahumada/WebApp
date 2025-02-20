@@ -1,0 +1,12 @@
+C:\Users\Mathi\Desktop\c sharp\Tienda\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\Mathi\Desktop\c sharp\Tienda\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\Mathi\Desktop\c sharp\Tienda\dominio\bin\Debug\dominio.dll
+C:\Users\Mathi\Desktop\c sharp\Tienda\dominio\bin\Debug\dominio.pdb
+C:\Users\Mathi\Desktop\c sharp\Tienda\dominio\obj\Debug\dominio.dll
+C:\Users\Mathi\Desktop\c sharp\Tienda\dominio\obj\Debug\dominio.pdb
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\dominio\bin\Debug\dominio.dll
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\dominio\bin\Debug\dominio.pdb
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\dominio\obj\Debug\dominio.dll
+C:\Users\Mathi\OneDrive\Escritorio\proyectoWEB\AbmWeb\dominio\obj\Debug\dominio.pdb
