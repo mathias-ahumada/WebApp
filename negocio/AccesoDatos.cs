@@ -21,7 +21,7 @@ namespace negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("Data Source=DESKTOP-LPCCPED\\SQLEXPRESS;Initial Catalog=CATALOGO_DB;Integrated Security=True"); 
+            conexion = new SqlConnection("Data Source=DESKTOP-LPCCPED\\SQLEXPRESS;Initial Catalog=CATALOGO_WEB_DB;Integrated Security=True"); 
             comando = new SqlCommand();
         }
 
@@ -79,5 +79,22 @@ namespace negocio
                 throw ex;
             }
         }
+
+
+        public int  ejecutarAccionEscalar()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                 return int.Parse(comando.ExecuteScalar().ToString());
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }

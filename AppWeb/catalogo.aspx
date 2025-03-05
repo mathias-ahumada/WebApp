@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><%: art._nombre %></h5>
                     <p class="card-text"><%: art._descripArticulo %></p>
-                    <a href='<%: "verDetalle.aspx?id=" + art._idArticulo %>' class="btn btn-primary">Ver detalle</a>
+                    <a href='<%: "detalles.aspx?id=" + art._idArticulo %>' class="btn btn-primary">Ver detalle</a>
                 </div>
             </div>
         </div>

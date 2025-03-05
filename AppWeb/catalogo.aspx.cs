@@ -12,26 +12,42 @@ namespace AppWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) // Solo cargar la lista si no es un postback
+
+            try
             {
-                if (Session["lista"] != null)
+
+                NegocioArticulos nego = new NegocioArticulos();
+
+                if (!IsPostBack) // Solo cargar la lista si no es un postback
                 {
-                    // Recuperar la lista de la sesión
-                    artList = (List<articulos>)Session["lista"];
+                    if (Session["ListaArticulos"] != null)
+                    {
+                        // Recuperar la lista de la sesión
+                        artList = nego.listar();
+                    }
+                    else
+                    {
+                        // Si la sesión está vacía, cargar desde la base de datos
+                        NegocioArticulos neg = new NegocioArticulos();
+                        artList = neg.listar();
+                        Session["ListaArticulos"] = artList; // Guardar en sesión
+                    }
                 }
                 else
                 {
-                    // Si la sesión está vacía, cargar desde la base de datos
-                    NegocioArticulos neg = new NegocioArticulos();
-                    artList = neg.listar();
-                    Session["lista"] = artList; // Guardar en sesión
+                    // En PostBack, asegurarse de que artList no sea null
+                    artList = (List<articulos>)Session["ListaArticulos"];
+
+
+                    artList = nego.listar();
                 }
             }
-            else
+            catch(Exception ex)
             {
-                // En PostBack, asegurarse de que artList no sea null
-                artList = (List<articulos>)Session["lista"];
+                Session.Add("error", ex.ToString());
+                Response.Redirect("error.aspx",false);
             }
-        }
+            
+            }
     }
 }

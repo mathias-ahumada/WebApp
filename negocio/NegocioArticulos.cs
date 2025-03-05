@@ -22,7 +22,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "Data Source=DESKTOP-LPCCPED\\SQLEXPRESS;Initial Catalog=CATALOGO_DB;Integrated Security=True";
+                conexion.ConnectionString = "Data Source=DESKTOP-LPCCPED\\SQLEXPRESS;Initial Catalog=CATALOGO_WEB_DB;Integrated Security=True";
                 comando.CommandType = System.Data.CommandType.Text;
 
                 comando.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion AS Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, ImagenUrl, Precio,M.Id,C.Id FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE M.Id = A.IdMarca AND C.Id = A.IdCategoria ";
@@ -177,22 +177,22 @@ namespace negocio
             }
         }
 
-        public  List<articulos> filtro(string campo, string criterio,string filtroo)
+        public List<articulos> filtro(string campo, string criterio, string filtroo)
         {
             List<articulos> lista = new List<articulos>();
-            AccesoDatos datos= new AccesoDatos();
+            AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT A.Id, Codigo, Nombre, A.Descripcion AS Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, ImagenUrl, Precio,M.Id,C.Id FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE M.Id = A.IdMarca AND C.Id = A.IdCategoria AND ";
+                string consulta = "SELECT A.Id, Codigo, Nombre, A.Descripcion AS Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, ImagenUrl, Precio, M.Id, C.Id FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE M.Id = A.IdMarca AND C.Id = A.IdCategoria AND ";
 
                 if (campo == "Precio")
                 {
-                    switch (criterio)
+                    switch (criterio.ToLower()) // Convertir a minúsculas para evitar problemas de mayúsculas/minúsculas
                     {
-                        case "Mayor a":
+                        case "mayor a":
                             consulta += "Precio > " + filtroo;
                             break;
-                        case "Menor a":
+                        case "menor a":
                             consulta += "Precio < " + filtroo;
                             break;
                         default:
@@ -202,26 +202,27 @@ namespace negocio
                 }
                 else if (campo == "Codigo")
                 {
-                    switch (criterio)
+                    switch (criterio.ToLower()) // Convertir a minúsculas
                     {
-                        case "Comienza con":
+                        case "comienza con":
                             consulta += "Codigo like '" + filtroo + "%' ";
                             break;
-                        case "Termina con":
+                        case "termina con":
                             consulta += "Codigo like '%" + filtroo + "'";
                             break;
                         default:
                             consulta += "Codigo like '%" + filtroo + "%'";
                             break;
                     }
-                }else if (campo == "Nombre")
+                }
+                else if (campo == "Nombre")
                 {
-                    switch (criterio)
+                    switch (criterio.ToLower()) // Convertir a minúsculas
                     {
-                        case "Comienza con":
+                        case "comienza con":
                             consulta += "Nombre like '" + filtroo + "%' ";
                             break;
-                        case "Termina con":
+                        case "termina con":
                             consulta += "Nombre like '%" + filtroo + "'";
                             break;
                         default:
@@ -229,7 +230,6 @@ namespace negocio
                             break;
                     }
                 }
-               
 
                 datos.setConsulta(consulta);
                 datos.ejecutarLectura();
@@ -243,8 +243,6 @@ namespace negocio
                     aux._nombre = (string)datos.Lector["Nombre"];
                     aux._descripArticulo = (string)datos.Lector["Descripcion"];
                     aux._precio = (decimal)datos.Lector["Precio"];
-
-
 
                     aux.DescripcionMarca = new Marca();
                     aux.DescripcionCategoria = new Categoria();
@@ -260,12 +258,10 @@ namespace negocio
                     lista.Add(aux);
                 }
 
-
                 return lista;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -287,6 +283,24 @@ namespace negocio
             }
         }
 
+
+        public void EliminarLogico(int id, bool activo=false)
+        {
+            try
+            {
+                AccesoDatos datos= new AccesoDatos();
+                datos.setConsulta("update ARTICULOS set activo= @activo where id=@id");
+                datos.SetearParametro("@id", id);
+                datos.SetearParametro("@activo", activo);
+                datos.ejecutarAccion();
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         
 
     }
